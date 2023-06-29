@@ -36,27 +36,43 @@ public class LinkedinPost {
         driver.findElement(By.xpath("//button[contains(text(),'Sign in')]")).click();
         Thread.sleep(3000);
 
-        // WebElement click = driver.findElement(By.xpath("//*[@id='ember166']/li-icon"));
-
-        // click.click();
-
-        // WebDriverWait wait = new WebDriverWait(WebDriver, 50000);
-        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='ember559']/div/div[2]/span/strong"));
-
         WebElement homeButton = driver.findElement(By.xpath("//header[@id='global-nav']/div/nav/ul/li[1]/a"));
-
         homeButton.click();
-
-
-    //     Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-    //    .pollingEvery(Duration.ofSeconds(250))
-    //    .ignoring(Exception.class);
-
-    //     wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='ember559']/div/div[2]/span/strong")));
 
         WebElement countOfWhoViewedMyProfile = driver.findElement(By.xpath("//span[text()=\"Who's viewed your profile\"]/../../following-sibling::div/span/strong"));
         countOfWhoViewedMyProfile.getText();
         System.out.println(countOfWhoViewedMyProfile);
+
+        WebElement impressionOfMyPost = driver.findElement(By.xpath("//span[text()='Impressions of your post']/../../following-sibling::div/span/strong"));
+        impressionOfMyPost.getText();
+        System.out.println(impressionOfMyPost);
+
+        WebElement startPost = driver.findElement(By.xpath("//span[text()='Start a post']"));
+        startPost.click();
+
+        Thread.sleep(3000);
+        
+        WebElement name = driver.findElement(By.xpath("//span[text()='Deepak Singh']"));
+        name.click();
+
+        WebElement connetionsOption = driver.findElement(By.xpath("//span[@class='sharing-shared-generic-list__description-double-line']/strong[text()='Connections only']"));
+
+        connetionsOption.click();
+
+        WebElement donebutton = driver.findElement(By.xpath("//span[text()='Done']"));
+        donebutton.click();
+
+        WebElement entertext = driver.findElement(By.xpath("//div[@data-placeholder='What do you want to talk about?']"));
+        entertext.click();
+        
+        entertext.sendKeys("Hello Everyone");
+
+        
+        WebElement postButton = driver.findElement(By.xpath("//div[@class='share-box_actions']"));
+
+        postButton.click();
+
+
 
 
 
