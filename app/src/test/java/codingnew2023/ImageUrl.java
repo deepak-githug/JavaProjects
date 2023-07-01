@@ -1,5 +1,7 @@
 package codingnew2023;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,9 +21,17 @@ public class ImageUrl {
         driver.get("https://in.bookmyshow.com/explore/home/chennai");
 
     // Find the count of images for recommended movies
-        WebElement images = driver.findElement(By.xpath("//div[@id='sdk-AD_HOME_CAROUSEL']/../following-sibling::div/div/div/div/div/div/div/div/div/div/a"));
+        List<WebElement> images = driver.findElements(By.xpath("//div[@id='sdk-AD_HOME_CAROUSEL']/../following-sibling::div/div/div/div/div/div/div/div/div/div/a"));
 
-        System.out.println(images.getSize());
+        System.out.println(images.size());
+
+        for(WebElement webelement : images){
+
+            String name = webelement.getText();
+
+            System.out.println(name);
+
+        }
 
 
 

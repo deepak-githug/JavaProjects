@@ -1,5 +1,6 @@
 package codingnew2023;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -23,10 +24,9 @@ public class HyperlinkCounts {
         WebDriver driver = new ChromeDriver();
         driver.get("https://in.bookmyshow.com/explore/home/chennai");
         Thread.sleep(3000);
-        WebElement count = driver.findElement(By.xpath("//a[@href]"));
+        List<WebElement> count = driver.findElements(By.xpath("//a[@href]"));
         Thread.sleep(3000);
-        count.getSize();
-        System.out.println(count);
+        count.size(); 
 
         }
     
